@@ -32,6 +32,7 @@ def start_camera():
         for filename in camera.capture_continuous(DATA_PATH + "/{timestamp:%Y-%m-%d}/{timestamp:%H-%M-%s}.jpg"):
             print("Captured %s" % filename)
 
+            # blink led while filming
             GPIO.output(PIN_LED_INFO, GPIO.HIGH)
 
             time.sleep(CAMERA_CAPTURE_PERIOD / 2)
