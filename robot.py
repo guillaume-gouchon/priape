@@ -29,11 +29,11 @@ def start_camera():
         camera.resolution=(1280, 720),
         camera.led = False
 
-        for filename in camera.capture_continuous(DATA_PATH + '/{timestamp:%Y-%m-%d}/{timestamp:%H-%M-%s}.jpg'):
-            print('Captured %s' % filename)
+        for filename in camera.capture_continuous(DATA_PATH + "/{timestamp:%Y-%m-%d}/{timestamp:%H-%M-%s}.jpg"):
+            print("Captured %s" % filename)
 
             GPIO.output(PIN_LED_INFO, GPIO.HIGH)
-            
+
             time.sleep(CAMERA_CAPTURE_PERIOD / 2)
 
             GPIO.output(PIN_LED_INFO, GPIO.LOW)
