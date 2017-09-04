@@ -1,0 +1,6 @@
+local_resinos: {}
+uuid: f9bea6d
+destination: /app
+ignore:
+  - .git
+  - node_modules/

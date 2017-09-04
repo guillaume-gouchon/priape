@@ -37,6 +37,10 @@ RUN pip install -r /requirements.txt
 # update Raspberry firmwares
 RUN rpi-update
 
+# set timezone
+ENV TZ=America/Los_Angeles
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # video libraries (https://raspberrypi.stackexchange.com/questions/34107/libmmal-core-so-missing)
 RUN echo /opt/vc/lib > pi_vc_core.conf && chown root.root pi_vc_core.conf && mv pi_vc_core.conf /etc/ld.so.conf && ldconfig
 
