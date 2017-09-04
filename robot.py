@@ -8,7 +8,7 @@ DATA_PATH = "/data"
 CAMERA_CAPTURE_PERIOD = 5 # in seconds
 WAIT_PERIOD = 60 # in seconds
 
-START_HOUR = 17
+START_HOUR = 21
 END_HOUR = 8
 
 def clean_up():
