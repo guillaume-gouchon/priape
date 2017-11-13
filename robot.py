@@ -8,7 +8,7 @@ DATA_PATH = "/data"
 CAMERA_CAPTURE_PERIOD = 5 # in seconds
 WAIT_PERIOD = 60 # in seconds
 
-START_HOUR = 21
+START_HOUR = 10
 END_HOUR = 8
 
 def clean_up():
@@ -23,10 +23,10 @@ def clean_up():
 def start_camera():
     print("Starting camera")
     with picamera.PiCamera() as camera:
-        camera.resolution = (1200, 800)
+        camera.resolution = (1400, 1000)
 
         # create folder
-        os.system("mkdir " + DATA_PATH + "/`date +%Y-%m-%d`")
+        os.system("mkdir " + DATA_PATH + "/`date + %Y-%m-%d`")
 
         for filename in camera.capture_continuous(DATA_PATH + "/{timestamp:%Y-%m-%d}/{timestamp:%H-%M-%S}.jpg"):
             print("Captured %s" % filename)
