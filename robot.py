@@ -8,8 +8,8 @@ DATA_PATH = "/data"
 CAMERA_CAPTURE_PERIOD = 5 # in seconds
 WAIT_PERIOD = 60 # in seconds
 
-START_HOUR = 10
-END_HOUR = 8
+START_HOUR = 23
+END_HOUR = 7
 
 def clean_up():
     for root, dirs, files in os.walk(DATA_PATH, topdown=False):
@@ -26,7 +26,7 @@ def start_camera():
         camera.resolution = (1400, 1000)
 
         # create folder
-        os.system("mkdir " + DATA_PATH + "/`date + %Y-%m-%d`")
+        os.system("mkdir " + DATA_PATH + "/`date +%Y-%m-%d`")
 
         for filename in camera.capture_continuous(DATA_PATH + "/{timestamp:%Y-%m-%d}/{timestamp:%H-%M-%S}.jpg"):
             print("Captured %s" % filename)
